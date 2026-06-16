@@ -34,8 +34,8 @@ body {
 }
 
 .content-area {
-  flex: 1;
-  padding: 24px;
+  /* flex: 1; */
+  padding-block: 24px;
 }
 
 footer {

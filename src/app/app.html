@@ -1,7 +1,8 @@
 <div class="wrapper">
 
  <app-sidebar
-  [class.show-sidebar]="sidebarOpen">
+  [sidebarOpen]="sidebarOpen"
+  (closeSidebar)="sidebarOpen = false">
 </app-sidebar>
 
   <div class="main-content">

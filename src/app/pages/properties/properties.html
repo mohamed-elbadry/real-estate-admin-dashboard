@@ -1,0 +1,103 @@
+<div class="container-fluid">
+
+  <h2 class="mb-4">
+    Properties
+  </h2>
+
+  <div class="row mb-4">
+
+    <div class="col-md-4">
+
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search property..."
+        [(ngModel)]="searchText">
+
+    </div>
+
+    <div class="col-md-3">
+
+      <select
+        class="form-select"
+        [(ngModel)]="selectedStatus">
+
+        <option value="">
+          All Status
+        </option>
+
+        <option value="Available">
+          Available
+        </option>
+
+        <option value="Sold">
+          Sold
+        </option>
+
+        <option value="Reserved">
+          Reserved
+        </option>
+
+      </select>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    @for(property of filteredProperties(); track property.id){
+
+    <div class="col-lg-4 col-md-6 mb-4">
+
+      <div class="card h-100 shadow-sm">
+
+        <img
+          [src]="property.image"
+          class="card-img-top">
+
+        <div class="card-body">
+
+          <h5>
+            {{property.name}}
+          </h5>
+
+          <p>
+            {{property.type}}
+          </p>
+
+          <p class="fw-bold">
+            ${{property.price}}
+          </p>
+
+          <span
+  class="badge"
+  [ngClass]="{
+    'bg-success': property.status === 'Available',
+    'bg-danger': property.status === 'Sold',
+    'bg-warning text-dark': property.status === 'Reserved'
+  }">
+
+  {{property.status}}
+
+</span>
+
+          <a
+            class="btn btn-dark w-100 mt-3"
+            [routerLink]="['/properties', property.id]">
+
+            View Details
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    }
+
+  </div>
+
+</div>

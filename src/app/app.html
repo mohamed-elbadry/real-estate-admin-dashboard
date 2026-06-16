@@ -1,16 +1,12 @@
 <div class="wrapper">
 
- <app-sidebar
-  [sidebarOpen]="sidebarOpen"
-  (closeSidebar)="sidebarOpen = false">
-</app-sidebar>
+  <app-sidebar [sidebarOpen]="sidebarOpen" (closeSidebar)="sidebarOpen = false">
+  </app-sidebar>
 
   <div class="main-content">
 
-  <app-navbar
-  [sidebarOpen]="sidebarOpen"
-  (toggleSidebar)="toggleSidebar()">
-</app-navbar>
+    <app-navbar [sidebarOpen]="sidebarOpen" (toggleSidebar)="toggleSidebar()">
+    </app-navbar>
 
     <div class="content-area">
       <router-outlet></router-outlet>
@@ -21,4 +17,3 @@
   </div>
 
 </div>
-

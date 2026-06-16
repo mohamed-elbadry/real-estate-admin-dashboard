@@ -1,86 +1,48 @@
 <div class="container-fluid">
-
-  <a
-    routerLink="/properties"
-    class="btn btn-secondary mb-4">
-
+  <a routerLink="/properties" class="btn btn-secondary mb-4">
     ← Back
-
   </a>
-
   @if(property){
-
   <div class="card shadow-sm">
-
-    <img
-      [src]="property.image"
-      class="card-img-top">
-
+    <img [src]="property.image" class="card-img-top">
     <div class="card-body">
-
       <h2>
         {{property.name}}
       </h2>
-
       <p>
         {{property.description}}
       </p>
-
       <hr>
-
       <p>
         <strong>Type:</strong>
         {{property.type}}
       </p>
-
       <p>
         <strong>Price:</strong>
         ${{property.price}}
       </p>
-
       <p>
         <strong>Status:</strong>
         {{property.status}}
       </p>
-
       <h4 class="mt-4 mb-3">
         Gallery
       </h4>
-
       <div class="row">
-
         <div class="col-md-4 mb-3">
-          <img
-            [src]="property.image"
-            class="img-fluid rounded">
+          <img [src]="property.image" class="img-fluid rounded">
         </div>
-
         <div class="col-md-4 mb-3">
-          <img
-            [src]="property.image"
-            class="img-fluid rounded">
+          <img [src]="property.image" class="img-fluid rounded">
         </div>
-
         <div class="col-md-4 mb-3">
-          <img
-            [src]="property.image"
-            class="img-fluid rounded">
+          <img [src]="property.image" class="img-fluid rounded">
         </div>
-
       </div>
-
-      <button
-        disabled
-        class="btn btn-warning">
-
+      <button disabled class="btn btn-warning">
         Edit
-
       </button>
-
     </div>
-
   </div>
-
   }
-
 </div>

@@ -1,11 +1,8 @@
 <div class="container-fluid">
-
   <h2 class="mb-4">
     Real Estate Dashboard
   </h2>
-
   <div class="row g-4">
-
     <div class="col-md-3">
       <div class="card shadow-sm h-100">
         <div class="card-body">
@@ -14,7 +11,6 @@
         </div>
       </div>
     </div>
-
     <div class="col-md-3">
       <div class="card shadow-sm h-100">
         <div class="card-body">
@@ -23,7 +19,6 @@
         </div>
       </div>
     </div>
-
     <div class="col-md-3">
       <div class="card shadow-sm h-100">
         <div class="card-body">
@@ -32,7 +27,6 @@
         </div>
       </div>
     </div>
-
     <div class="col-md-3">
       <div class="card shadow-sm h-100">
         <div class="card-body">
@@ -41,46 +35,32 @@
         </div>
       </div>
     </div>
-
   </div>
-
   <div class="card shadow-sm mt-4 card stat-card shadow-sm">
-
-  <div class="card-header">
-    Latest Properties
+    <div class="card-header">
+      Latest Properties
+    </div>
+    <div class="table-responsive">
+      <table class="table mb-0">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(property of properties; track property.id){
+          <tr>
+            <td>{{property.name}}</td>
+            <td>{{property.type}}</td>
+            <td>{{property.status}}</td>
+            <td>${{property.price}}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
   </div>
-
-  <div class="table-responsive">
-
-    <table class="table mb-0">
-
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Status</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-
-      <tbody>
-
-        @for(property of properties; track property.id){
-
-        <tr>
-          <td>{{property.name}}</td>
-          <td>{{property.type}}</td>
-          <td>{{property.status}}</td>
-          <td>${{property.price}}</td>
-        </tr>
-
-        }
-
-      </tbody>
-
-    </table>
-
-  </div>
-
-</div>
 </div>
